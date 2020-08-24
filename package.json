@@ -1,0 +1,25 @@
+{
+  "name": "rapid-deploy-url-shortener",
+  "version": "1.0.0",
+  "description": "A rapid deploy URL shortener express server made with NodeJS, express.js, Vue.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dubst3pGam1ng/rapid-deploy-url-shortener.git"
+  },
+  "keywords": [
+    "URL_Shortener"
+  ],
+  "author": "Dubby",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Dubst3pGam1ng/rapid-deploy-url-shortener/issues"
+  },
+  "homepage": "https://github.com/Dubst3pGam1ng/rapid-deploy-url-shortener#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

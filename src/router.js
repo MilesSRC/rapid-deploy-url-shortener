@@ -20,9 +20,10 @@ router.get('/', (req, res) => {
 
 //Filesystem based routing
 const fs = require('fs');
+const directory = require('path').dirname(require.main.filename);
 
-fs.readdirSync('./routes').forEach((path) => {
-    let data = require(`./routes/${path}`);
+fs.readdirSync(`${directory}/src/routes/`).forEach((path) => {
+    let data = require(`${directory}/src/routes/${path}`);
     router.use(data.path, data.router);
 });
 

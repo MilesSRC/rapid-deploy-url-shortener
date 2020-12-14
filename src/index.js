@@ -5,6 +5,7 @@
  * Liscensed GNU General Public License v3.0
  */
 //dotenv
+const env = process.env;
 require('dotenv').config();
 
 //Express Application
@@ -25,6 +26,18 @@ app.use(require('./helpers/errors'))
 
 //Listen
 var port = process.env.PORT || 3000;
-app.listen(port, ()=>{
-    console.log(`Listening on Port ${port}`);
-});
+if(env.SSL == 'true'){
+    const https = require('https');
+    const fs = require('fs');
+
+    https.createServer({
+        key: fs.readFileSync(env.SSL_KEY),
+        cert: fs.readFileSync(env.SSL_CERT)
+    }, app).listen(port, () => {
+        console.log(`Listening on Port ${port}`);
+    });
+} else {
+    app.listen(port, ()=>{
+        console.log(`Listening on Port ${port}`);
+    });
+}

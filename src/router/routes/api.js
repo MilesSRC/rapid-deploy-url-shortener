@@ -4,6 +4,9 @@
  * 
  * Liscensed GNU General Public License v3.0
  */
+//Filesystem
+const fs = require('fs');
+
 //NanoID
 const { nanoid } = require('nanoid');
 
@@ -74,7 +77,12 @@ router.post('/shorten', async (req, res, next) => {
         await schema.validate({
             slug,
             to
+        }).catch(err=>{
+            res.status(400).send(err);
         });
+
+        if(res.headersSent)
+            return;
 
         //Check if the slug already exists
         let data = await slugs.findOne({ slug: slug });

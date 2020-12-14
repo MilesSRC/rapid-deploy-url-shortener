@@ -12,18 +12,16 @@ const express = require('express');
 const app = express();
 
 //Middlewares
-const helmet = require('helmet');
 const cors = require('cors');
 
 //Inject middlewares
-app.use(helmet());
 app.use(cors());
 
 //Router
-app.use('/', require('./src/router'));
+app.use('/', require('./router/router'));
 
 //Error Handling
-app.use(require('./src/errors'))
+app.use(require('./helpers/errors'))
 
 //Listen
 var port = process.env.PORT || 3000;

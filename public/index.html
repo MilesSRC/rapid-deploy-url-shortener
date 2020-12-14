@@ -3,38 +3,47 @@
   By Dubst3pGam1ng/Miles Rush on Github
   
   Liscensed GNU General Public License v3.0 -->
-
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src * 'unsafe-inline' 'unsafe-eval';" />
     <title>Rapid Deploy URL Shortener</title>
 
+    <script src="https://kit.fontawesome.com/2e913fa43b.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://dubgames.net/cdn/axios.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="dynamic.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <form>
+    <div class='cont' id='cont'>
+        <form class='needs-validation' @submit.prevent="shorten();">
             <span>Link Shortener</span>
 
             <div>
-                <span></span>
-                <input type="text" id="slug" placeholder="Slug (Ex. example.com/slug)">
-            </div>
-            <div>
-                <span></span>
-                <input type="url" id="to" placeholder="Links to (Ex. mysitehere.com)">
+                <span>Slug</span>
+                <input type="text" id="slug" placeholder="(Ex. example.com/slug)">
             </div>
 
-            <button>Shorten</button>
+            <div>
+                <span>Link to <label class='req-ast'>*</label></span>
+                <input type="url" id="to" placeholder="(Ex. mysitehere.com)">
+            </div>
+
+            <div style='text-align: left;'>
+                <span>Force?</span>
+                <input type="checkbox" id="force">
+            </div>
+
+            <button type='submit'>Shorten</button>
         </form>
     </div>
 
     <!-- You don't have to keep this, but I'd appreciate it :D -->
-    <span class="credit">Made with <span class="heart">❤</span> by <a href="https://github.com/Dubst3pGam1ng" target="_blank" rel="noopener noreferrer">Miles Rush/Dubst3pGam1ng</a></span>
+    <span class="credit">Made with <span class="heart">❤</span> by <a href="https://github.com/MilesSRC" target="_blank" rel="noopener noreferrer">Miles Rush/MilesSRC</a></span>
 </body>
-</html>

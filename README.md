@@ -8,7 +8,7 @@ Slug (The end of the URL that is going to be used to identify the linked URL)
 Endpoints:
 GET /:slug (Get and be redirected to an existing slug)
 
-POST /:slug (Post a new slug. If the URL already exists the existing one will be returned. To forcefully create a new slug (ignoring existing), add ```force: true```, to the request body)
+POST /shorten (Post a new slug. If the URL already exists the existing slug for the URL will be returned. To forcefully create a new slug (ignoring existing), add ```force: true```, to the request body)
 
 GET /slugs/:slug (Get the slug data for an existing slug)
 

@@ -21,8 +21,12 @@ const schema = yup.object().shape({
 const express = require('express');
 const router = express.Router();
 
+// Middlewares
+const ratelimit = (require('express-rate-limit'))({ windowMs: 15 * 60000, max: 5, skipFailedRequests: true });
+
 //Router Middleware
 router.use(express.json());
+router.use(ratelimit);
 
 //Databasing with MongoDB through Monk
 const db = require('monk')(`${process.env.MONGO_URI}/${process.env.MONGO_DB}`);

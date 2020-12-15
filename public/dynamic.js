@@ -9,7 +9,7 @@ $(document).ready(()=>{
     const app = new Vue({
         el: "#cont",
         data: {
-            endpoint: "http://localhost:8083" //Leave blank if served with the backend. Otherwise, put the backends location here.
+            endpoint: "" //Leave blank if served with the backend. Otherwise, put the backends location here.
         },
         methods: {
             shorten: (e) => {
